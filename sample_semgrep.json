@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "results": [
+    {
+      "check_id": "python.lang.security.audit.formatted-sql-query.formatted-sql-query",
+      "path": "vulnerable_app.py",
+      "start": {
+        "line": 7,
+        "col": 4
+      },
+      "end": {
+        "line": 8,
+        "col": 30
+      },
+      "extra": {
+        "message": "Detected SQL query construction using string concatenation with a potentially user-controlled value. This is vulnerable to SQL injection. Use parameterized queries or an ORM instead.",
+        "severity": "ERROR",
+        "metadata": {
+          "cwe": ["CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"],
+          "owasp": ["A03:2021 - Injection"],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection/",
+            "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+          ],
+          "confidence": "HIGH",
+          "technology": ["python", "sqlite"]
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "findings": 1,
+    "errors": 0
+  }
+}
